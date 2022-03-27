@@ -9,17 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BNRPerson : NSObject {
-    // BNRPerson has two variables
-    float _heightInMeters;
-    int _weightInKilos;
-}
+@interface BNRPerson : NSObject
 
-// BNRPerson has methods to read and set its instance variables
-- (float)heightInMeters;
-- (void)setHeightInMeters:(float)h;
-- (int)weightInKilos;
-- (void)setWeightInKilos:(int)w;
+// BNRPerson has two properties
+@property (nonatomic) float heightInMeters;
+@property (nonatomic) int weightInKilos;
 
 // BNRPerson has a method that calculates the Body Mass Index
 - (float)bodyMassIndex;
