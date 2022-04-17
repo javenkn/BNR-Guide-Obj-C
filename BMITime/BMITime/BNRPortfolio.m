@@ -8,6 +8,11 @@
 #import "BNRPortfolio.h"
 #import "BNRStockHolding.h"
 
+@interface BNRPortfolio() {
+    NSMutableArray *_holdings;
+}
+@end
+
 @implementation BNRPortfolio
 
 - (void)addStockHolding:(BNRStockHolding *)stockHolding {
@@ -17,6 +22,12 @@
         _holdings = [[NSMutableArray alloc] init];
     }
     [_holdings addObject:stockHolding];
+}
+
+- (void)removeStockHolding:(BNRStockHolding *)stockHolding {
+    if ([_holdings indexOfObject:stockHolding] != NSNotFound) {
+        [_holdings removeObject:stockHolding];
+    }
 }
 
 - (float)totalValue {
