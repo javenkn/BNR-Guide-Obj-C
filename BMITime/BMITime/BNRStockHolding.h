@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
     int _numberOfShares;
 }
 
+@property (nonatomic) NSString *symbol;
+
 - (float)purchaseSharePrice;
 - (void)setPurchaseSharePrice:(float)pSPrice;
 - (float)currentSharePrice;
