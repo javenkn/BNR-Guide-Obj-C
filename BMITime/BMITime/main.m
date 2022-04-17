@@ -121,6 +121,8 @@ int main(int argc, const char * argv[]) {
             // Put the employee in the employees array
             [employees addObject:employee];
         }
+        
+        NSMutableArray *allAssets = [[NSMutableArray alloc] init];
 
         // Create 10 assets
         for(int i = 0; i < 10; i++) {
@@ -140,12 +142,16 @@ int main(int argc, const char * argv[]) {
             if(randomEmployee.assets.count > 1) {
                 [randomEmployee removeAsset:asset];
             }
+            
+            [allAssets addObject:asset];
         }
 
         NSLog(@"Employees: %@", employees);
         NSLog(@"Giving up ownership of one employee");
         [employees removeObjectAtIndex:5];
+        NSLog(@"allAssets: %@", allAssets);
         NSLog(@"Giving up ownership of arrays");
+        allAssets = nil;
         employees = nil;
         
 //        // Ch. 21 - Object Instance Variables and Properties Challenge
@@ -179,5 +185,6 @@ int main(int argc, const char * argv[]) {
 //
 //        NSLog(@"Total value of portfolio: %f", portfolio.totalValue);
     }
+    sleep(100);
     return 0;
 }
